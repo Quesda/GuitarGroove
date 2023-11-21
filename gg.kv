@@ -1,0 +1,476 @@
+<GridLayout>:
+    size_hint: (0.95, 0.95)
+    pos_hint: {"center_x": 0.5, "center_y":0.5}
+
+<Label>:
+    size_hint_x: 1.0
+    size_hint_y: None
+    height: self.texture_size[1] + 150
+
+<Button>:
+    background_color: '#00FFCE'
+    size_hint_x: 1.0
+    size_hint_y: 1.0
+    font_size: '24sp'
+
+
+
+##################################################
+
+
+<HomeScreen>:
+    orientation: "vertical"
+    GridLayout:
+        cols: 1
+
+        Label:
+            font_size: "48sp"
+		    text: "GuitarGroove"
+
+        Button:
+            text: 'Гитара'
+            on_press:
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'guitar'
+
+        Button:
+            text: 'Укулеле'
+            on_press:
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'ukulele'
+
+
+##################################################
+
+
+<GuitarScreen>:
+    GridLayout:
+        cols: 1
+
+        Label:
+            font_size: "48sp"
+            text: "Гитара"
+
+        Button:
+            text: 'Песни'
+            background_color: 'pink'
+            on_press:
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'gsongs'
+
+        Button:
+            text: 'Аккорды'
+            background_color: 'pink'
+            on_press:
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'gaccords'
+
+        Button:
+            text: 'Вернуться'
+            size_hint_y: 0.5
+            background_color: 'red'
+            on_release:
+                root.manager.transition.direction = 'right'
+                root.manager.current = 'home'
+
+
+##################################################
+
+
+<GSongsScreen>:
+    ScrollView:
+        do_scroll_x: False
+        do_scroll_y: True
+
+        GridLayout:
+            size_hint_y: None
+            cols: 1
+
+            Label:
+                font_size: "48sp"
+                text: 'Песни для Гитары'
+
+            Button:
+                text: 'В. Цой - "Пачка сигарет"'
+                size_hint_y: None
+                background_color: 'cyan'
+                on_release:
+                    root.manager.transition.direction = 'left'
+                    root.manager.current = 'gsong1'
+
+            Button:
+                text: 'Жуки - Батарейка'
+                size_hint_y: None
+                background_color: 'cyan'
+                on_release:
+                    root.manager.transition.direction = 'left'
+                    root.manager.current = 'gsong2'
+
+            Button:
+                text: 'Валентин Стрыкало - Гори твое фото'
+                size_hint_y: None
+                background_color: 'cyan'
+                on_release:
+                    root.manager.transition.direction = 'left'
+                    root.manager.current = 'gsong3'
+
+            Button:
+                text: 'Король и Шут - Дурак и молния'
+                size_hint_y: None
+                background_color: 'cyan'
+                on_release:
+                    root.manager.transition.direction = 'left'
+                    root.manager.current = 'gsong4'
+
+            Button:
+                text: 'Нервы - Батареи'
+                size_hint_y: None
+                background_color: 'cyan'
+                on_release:
+                    root.manager.transition.direction = 'left'
+                    root.manager.current = 'gsong5'
+
+    Button:
+        text: 'Вернуться'
+        size_hint_y: 0.075
+        background_color: 'red'
+        on_release:
+            root.manager.transition.direction = 'right'
+            root.manager.current = 'guitar'
+
+
+##################################################
+
+
+<GAccordsScreen>:
+    Image:
+        source: 'Accords/Full.jpg'
+    Button:
+        text: 'Вернуться'
+        size_hint_y: 0.075
+        background_color: 'red'
+        on_release:
+            root.manager.transition.direction = 'right'
+            root.manager.current = 'guitar'
+
+
+##################################################
+
+
+<UkuleleScreen>:
+    GridLayout:
+        cols: 1
+
+        Label:
+            font_size: "48sp"
+            text: "Укулеле"
+
+        Button:
+            text: 'Песни'
+            background_color: 'pink'
+            on_press:
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'usongs'
+
+        Button:
+            text: 'Аккорды'
+            background_color: 'pink'
+            on_press:
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'uaccords'
+
+        Button:
+            text: 'Вернуться'
+            size_hint_y: 0.5
+            background_color: 'red'
+            on_release:
+                root.manager.transition.direction = 'right'
+                root.manager.current = 'home'
+
+
+##################################################
+
+
+<USongsScreen>:
+    ScrollView:
+        do_scroll_x: False
+        do_scroll_y: True
+
+        GridLayout:
+            size_hint_y: None
+            cols: 1
+
+            Label:
+                font_size: "48sp"
+                text: 'Песни для Укулеле'
+
+            Button:
+                text: 'П. Налич - "Сахарный пакет"'
+                size_hint_y: None
+                background_color: 'cyan'
+                on_release:
+                    root.manager.transition.direction = 'left'
+                    root.manager.current = 'usong1'
+
+            Button:
+                text: 'Земфира - Хочешь'
+                size_hint_y: None
+                background_color: 'cyan'
+                on_release:
+                    root.manager.transition.direction = 'left'
+                    root.manager.current = 'usong2'
+
+            Button:
+                text: 'Дайте танк(!) - Утро'
+                size_hint_y: None
+                background_color: 'cyan'
+                on_release:
+                    root.manager.transition.direction = 'left'
+                    root.manager.current = 'usong3'
+
+            Button:
+                text: 'Алые паруса'
+                size_hint_y: None
+                background_color: 'cyan'
+                on_release:
+                    root.manager.transition.direction = 'left'
+                    root.manager.current = 'usong4'
+
+            Button:
+                text: 'Ария - Потерянный рай'
+                size_hint_y: None
+                background_color: 'cyan'
+                on_release:
+                    root.manager.transition.direction = 'left'
+                    root.manager.current = 'usong5'
+
+    Button:
+        text: 'Вернуться'
+        size_hint_y: 0.075
+        background_color: 'red'
+        on_release:
+            root.manager.transition.direction = 'right'
+            root.manager.current = 'ukulele'
+
+
+##################################################
+
+
+<UAccordsScreen>:
+    Image:
+        source: 'Accords/UFull.jpg'
+    Button:
+        text: 'Вернуться'
+        size_hint_y: 0.075
+        background_color: 'red'
+        on_release:
+            root.manager.transition.direction = 'right'
+            root.manager.current = 'ukulele'
+
+<AccordsScreen>:
+    Button:
+        text: 'Вернуться'
+        size_hint_y: 0.075
+        background_color: 'red'
+        on_release:
+            root.manager.transition.direction = 'right'
+            root.manager.current = 'home'
+
+    GridLayout:
+        cols: 1
+
+        Label:
+            font_size: "48sp"
+            text: "Аккорды"
+
+
+##################################################
+
+
+<GSong1>:
+    ScrollView:
+        do_scroll_x: False
+        do_scroll_y: True
+
+        Label:
+            size_hint_y: None
+            text: root.gsong1
+            height: self.texture_size[1]
+
+    Button:
+        text: 'Вернуться'
+        size_hint_y: 0.075
+        background_color: 'red'
+        on_release:
+            root.manager.transition.direction = 'right'
+            root.manager.current = 'gsongs'
+
+<GSong2>:
+    ScrollView:
+        do_scroll_x: False
+        do_scroll_y: True
+
+        Label:
+            size_hint_y: None
+            text: root.gsong2
+            height: self.texture_size[1]
+
+    Button:
+        text: 'Вернуться'
+        size_hint_y: 0.075
+        background_color: 'red'
+        on_release:
+            root.manager.transition.direction = 'right'
+            root.manager.current = 'gsongs'
+
+<GSong3>:
+    ScrollView:
+        do_scroll_x: False
+        do_scroll_y: True
+
+        Label:
+            size_hint_y: None
+            text: root.gsong3
+            height: self.texture_size[1]
+
+    Button:
+        text: 'Вернуться'
+        size_hint_y: 0.075
+        background_color: 'red'
+        on_release:
+            root.manager.transition.direction = 'right'
+            root.manager.current = 'gsongs'
+
+<GSong4>:
+    ScrollView:
+        do_scroll_x: False
+        do_scroll_y: True
+
+        Label:
+            size_hint_y: None
+            text: root.gsong4
+            height: self.texture_size[1]
+
+    Button:
+        text: 'Вернуться'
+        size_hint_y: 0.075
+        background_color: 'red'
+        on_release:
+            root.manager.transition.direction = 'right'
+            root.manager.current = 'gsongs'
+
+<GSong5>:
+    ScrollView:
+        do_scroll_x: False
+        do_scroll_y: True
+
+        Label:
+            size_hint_y: None
+            text: root.gsong5
+            height: self.texture_size[1]
+
+    Button:
+        text: 'Вернуться'
+        size_hint_y: 0.075
+        background_color: 'red'
+        on_release:
+            root.manager.transition.direction = 'right'
+            root.manager.current = 'gsongs'
+
+
+##################################################
+
+
+<USong1>:
+    ScrollView:
+        do_scroll_x: False
+        do_scroll_y: True
+
+        Label:
+            size_hint_y: None
+            text: root.usong1
+            height: self.texture_size[1]
+
+    Button:
+        text: 'Вернуться'
+        size_hint_y: 0.075
+        background_color: 'red'
+        on_release:
+            root.manager.transition.direction = 'right'
+            root.manager.current = 'usongs'
+
+<USong2>:
+    ScrollView:
+        do_scroll_x: False
+        do_scroll_y: True
+
+        Label:
+            size_hint_y: None
+            text: root.usong2
+            height: self.texture_size[1]
+
+    Button:
+        text: 'Вернуться'
+        size_hint_y: 0.075
+        background_color: 'red'
+        on_release:
+            root.manager.transition.direction = 'right'
+            root.manager.current = 'usongs'
+
+<USong3>:
+    ScrollView:
+        do_scroll_x: False
+        do_scroll_y: True
+
+        Label:
+            size_hint_y: None
+            text: root.usong3
+            height: self.texture_size[1]
+
+    Button:
+        text: 'Вернуться'
+        size_hint_y: 0.075
+        background_color: 'red'
+        on_release:
+            root.manager.transition.direction = 'right'
+            root.manager.current = 'usongs'
+
+<USong4>:
+    ScrollView:
+        do_scroll_x: False
+        do_scroll_y: True
+
+        Label:
+            size_hint_y: None
+            text: root.usong4
+            height: self.texture_size[1]
+
+    Button:
+        text: 'Вернуться'
+        size_hint_y: 0.075
+        background_color: 'red'
+        on_release:
+            root.manager.transition.direction = 'right'
+            root.manager.current = 'usongs'
+
+<USong5>:
+    ScrollView:
+        do_scroll_x: False
+        do_scroll_y: True
+
+        Label:
+            size_hint_y: None
+            text: root.usong5
+            height: self.texture_size[1]
+
+    Button:
+        text: 'Вернуться'
+        size_hint_y: 0.075
+        background_color: 'red'
+        on_release:
+            root.manager.transition.direction = 'right'
+            root.manager.current = 'usongs'
+
+
+##################################################
+
